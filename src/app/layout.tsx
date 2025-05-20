@@ -7,7 +7,7 @@ const gilroy = localFont(
   {
     src:[
       {
-        path: "./fonts/gilroy/Gilroy-light.ttf",
+        path: "./fonts/gilroy/Gilroy-Light.ttf",
         weight:'300',
         style:"normal",
       },
