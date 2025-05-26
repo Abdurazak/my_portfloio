@@ -1,0 +1,10 @@
+{
+  "github": {
+    "autoDeployment": false
+  },
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  }
+}
