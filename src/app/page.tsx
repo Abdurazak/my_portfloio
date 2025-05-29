@@ -1,8 +1,13 @@
+'use client'
 import Link from 'next/link'
 import { LucideGithub, LucideLinkedin } from 'lucide-react';
 import './globals.css';
+import { useEffect,useState } from "react";
 
 export default function Home() {
+
+  const [activeSection, setActiveSection] = useState('about');
+
   return (
     <main className="container mx-auto px-4 py-8">
       <nav className="flex items-center justify-between">
