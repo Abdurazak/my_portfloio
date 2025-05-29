@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { LucideGithub, LucideLinkedin } from 'lucide-react';
 import './globals.css';
 import { useEffect, useState } from "react";
-import { root } from 'postcss';
 
 export default function Home() {
 
