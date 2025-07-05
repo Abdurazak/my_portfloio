@@ -1,10 +1,6 @@
-import Image from "next/image";
 import TechnologyItem from "./technology_item";
 
-export default function TechnologyExperience({ image_color, image_url }: {
-    image_color?: string;
-    image_url?: string;
-}) {
+export default function TechnologyExperience() {
     return (
         <div className="flex flex-col items-center justify-center my-10">
             <h2 className="text-3xl font-bold mb-4 text-center">Technology Experience</h2>
