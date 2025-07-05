@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { LucideGithub, LucideLinkedin } from 'lucide-react';
 import './globals.css';
 import { useEffect, useState } from "react";
+import TechnologyExperience from './ui/about/technology_experience';
 
 export default function Home() {
 
@@ -54,7 +55,7 @@ export default function Home() {
 
 
   return (
-    <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4 py-8 font-gilroy">
       <nav className="sticky top-0 z-10 bg-white/90 backdrop-blur-md flex items-center justify-between">
         {/* Name/Logo */}
         <div>
@@ -151,13 +152,26 @@ export default function Home() {
         </div>
       </nav>
       <div className="pt-32">
+        <div className="flex justify-center min-h-screen">
+          <div className='text-center'>
+            <h2 className='text-4xl font-bold'>Hi, I&#39;m Abdurazak Abrar</h2>
+            <p>Senior Software Engineer | Flutter & Fullstack Specialist</p>
+            <span className='w-screen block mt-10'>I design and develop intuitive, high-performance applications that simplify financial processes, enhance user experiences, and deliver clean, mobile-friendly UI across platforms.</span>
+            <div className="flex gap-4 mt-6 justify-center"> <button className="bg-blue-600 text-white px-6 py-2 rounded-full font-semibold cursor-pointer hover:bg-blue-700 transition" onClick={scrollToSection('projects')}> 🚀 View Projects </button> <a href='https://docs.google.com/document/d/1lsQFVyaCYpq5GBGiI16yPXYpUPTgJzPI/export?format=pdf'>
+              <button className="border px-6 py-2 rounded-full font-semibold hover:bg-gray-100 cursor-pointer transition"> ⬇️ Download Resume </button>
+            </a></div>
+          </div>
+        </div>
+
+
         {/* About Section */}
-        <section id="about" className="min-h-screen flex items-center">
+        <section id="about" className="min-h-screen flex items-center justify-center">
           <div>
-            <h2 className="text-3xl font-bold mb-4">About Me</h2>
-            <p className="text-lg">
+            <h2 className="text-3xl font-bold mb-4 text-center">What I do</h2>
+            <p className="text-lg mx-auto">
               I&#39;m a senior Flutter developer with 10+ years of experience building scalable, user-friendly apps for fintech and other industries. I specialize in clean UI/UX, mobile-first design, and seamless backend integration using Flutter and .NET. I&#39;ve worked on loan management, ride-sharing, and delivery systems—always focused on making complex tools easier to use. I’m passionate about clean architecture, smart collaboration, and using AI tools to boost productivity.
             </p>
+            <TechnologyExperience/>
           </div>
         </section>
 
