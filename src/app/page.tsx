@@ -4,6 +4,8 @@ import { LucideGithub, LucideLinkedin } from 'lucide-react';
 import './globals.css';
 import { useEffect, useState } from "react";
 import TechnologyExperience from './ui/about/technology_experience';
+import Image from 'next/image';
+import ProjectSectionFeatured from './ui/project/project_section_featured';
 
 export default function Home() {
 
@@ -171,30 +173,14 @@ export default function Home() {
             <p className="text-lg mx-auto">
               I&#39;m a senior Flutter developer with 10+ years of experience building scalable, user-friendly apps for fintech and other industries. I specialize in clean UI/UX, mobile-first design, and seamless backend integration using Flutter and .NET. I&#39;ve worked on loan management, ride-sharing, and delivery systems—always focused on making complex tools easier to use. I’m passionate about clean architecture, smart collaboration, and using AI tools to boost productivity.
             </p>
-            <TechnologyExperience/>
+            <TechnologyExperience />
           </div>
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="min-h-screen flex items-center">
-          <div>
-            <h2 className="text-3xl font-bold mb-4">My Projects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Project cards would go here */}
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-2">Project 1</h3>
-                <p>A brief description of project 1.</p>
-              </div>
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-2">Project 2</h3>
-                <p>A brief description of project 2.</p>
-              </div>
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-2">Project 3</h3>
-                <p>A brief description of project 3.</p>
-              </div>
-            </div>
-          </div>
+        <section id="projects" className="min-h-screen w-3/4 flex items-center m-auto">
+          <ProjectSectionFeatured image_url={'/images/bejae_feature_graphic.jpg'} image_alt={'Bejae Feature Image'} description={"Translated complex Figma designs into pixel-perfect, responsive Flutter UI for Bejae's device financing platform while architecting a scalable, feature-based structure that enhanced user engagement, modularity, and onboarding efficiency."} />
+
         </section>
 
         {/* Contact Section */}
