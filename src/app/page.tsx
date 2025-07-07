@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import TechnologyExperience from './ui/about/technology_experience';
 import Image from 'next/image';
 import ProjectSectionFeatured from './ui/project/project_section_featured';
+import ProjectList, { Project } from './ui/project/project_list';
 
 export default function Home() {
 
@@ -178,9 +179,30 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="min-h-screen w-3/4 flex items-center m-auto">
+        <section id="projects" className="min-h-screen w-3/4 flex flex-col items-center m-auto">
           <ProjectSectionFeatured image_url={'/images/bejae_feature_graphic.jpg'} image_alt={'Bejae Feature Image'} description={"Translated complex Figma designs into pixel-perfect, responsive Flutter UI for Bejae's device financing platform while architecting a scalable, feature-based structure that enhanced user engagement, modularity, and onboarding efficiency."} />
+          <div className='pt-20'>
+            <ProjectList projects={[
+            {
+              title: "Asset Finance",
+              description: "Developed a comprehensive loan management system with Flutter and Firebase, enabling real-time data synchronization, offline capabilities, and a seamless user experience across Android and iOS platforms.",
+              project_url: "https://play.google.com/store/apps/details?id=et.assetfinance.assetfinance"
+            },
+            {
+              title: "Bejae",
+              description: "Architected a scalable, feature-based Flutter application for Bejae, enhancing user engagement and onboarding efficiency through modular design and responsive UI.",
+              project_url: "https://play.google.com/store/apps/details?id=com.bejae.app"
+            },
+            {
+              title: "Ride Sharing App",
+              description: "Built a ride-sharing app with real-time tracking, driver-passenger matching, and secure payment integration using Flutter and Firebase.",
+              project_url: "https://play.google.com/store/apps/details?id=com.example.ridesharingapp"
+            }
+          ]} />
 
+          </div>
+
+          
         </section>
 
         {/* Contact Section */}
