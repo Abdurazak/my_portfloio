@@ -4,6 +4,10 @@ import { LucideGithub, LucideLinkedin } from 'lucide-react';
 import './globals.css';
 import { useEffect, useState } from "react";
 import TechnologyExperience from './ui/about/technology_experience';
+import ProjectSectionFeatured from './ui/project/project_section_featured';
+import ProjectList from './ui/project/project_list';
+import TestimonialList from './ui/testimonials/testimonial_list';
+
 
 export default function Home() {
 
@@ -171,29 +175,94 @@ export default function Home() {
             <p className="text-lg mx-auto">
               I&#39;m a senior Flutter developer with 10+ years of experience building scalable, user-friendly apps for fintech and other industries. I specialize in clean UI/UX, mobile-first design, and seamless backend integration using Flutter and .NET. I&#39;ve worked on loan management, ride-sharing, and delivery systems—always focused on making complex tools easier to use. I’m passionate about clean architecture, smart collaboration, and using AI tools to boost productivity.
             </p>
-            <TechnologyExperience/>
+            <TechnologyExperience />
           </div>
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="min-h-screen flex items-center">
-          <div>
-            <h2 className="text-3xl font-bold mb-4">My Projects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Project cards would go here */}
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-2">Project 1</h3>
-                <p>A brief description of project 1.</p>
-              </div>
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-2">Project 2</h3>
-                <p>A brief description of project 2.</p>
-              </div>
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-2">Project 3</h3>
-                <p>A brief description of project 3.</p>
-              </div>
-            </div>
+        <section id="projects" className="min-h-screen w-3/4 flex flex-col items-center m-auto">
+          <ProjectSectionFeatured image_url={'/images/bejae_feature_graphic.jpg'} image_alt={'Bejae Feature Image'} description={"Translated complex Figma designs into pixel-perfect, responsive Flutter UI for Bejae's device financing platform while architecting a scalable, feature-based structure that enhanced user engagement, modularity, and onboarding efficiency."} />
+          <ProjectList projects={[
+            {
+              title: "Bejae",
+              description: "Delivered responsive Flutter UI/UX for Bejae's device financing app using complex Figma designs, feature-based architecture, Flutter BLoC, and Dio for backend integration.",
+              project_url: "https://play.google.com/store/apps/details?id=com.bejae.app"
+            },
+            {
+              title: "EasyLoans Platform",
+              description: "Redesigned UI/UX and implemented responsive design using Flutter. Built a full client reporting system using .NET Core backend and Flutter frontend.",
+              project_url: "https://easyloans.co.za/"
+            },
+            {
+              title: "Chegebeya Merchant App",
+              description: "Developed the merchant app for the Chegebeya B2B platform and enhanced admin portal using Next.js and Tailwind CSS.",
+              project_url: "https://chegebeya.com/"
+            },
+            {
+              title: "Wanza Express",
+              description: "Led full-stack development of courier and manifest systems using Next.js, PostgreSQL, Docker, and Keycloak-based auth.",
+              project_url: "https://wanzaexpress.com/"
+            },
+            {
+              title: "News & Entertainment App",
+              description: "Rebuilt and redesigned a Flutter news app using feature-based architecture, Flutter BLoC, and Dio integration.",
+              project_url: "https://addisradioperspective.wordpress.com/"
+            },
+            {
+              title: "Axumite Ride",
+              description: "Built driver and passenger ride-sharing apps using Flutter, with modular BLoC architecture and Dio integration.",
+            },
+            {
+              title: "GIZ Training App",
+              description: "Created a training management app for GIZ Ethiopia with SQLite offline storage and MQTT real-time messaging.",
+            },
+            {
+              title: "SAMS-DSS",
+              description: "Developed a beekeeping support app (SAMS-DSS) with secure Auth0 authentication and clean Flutter UI.",
+            },
+            {
+              title: "Easy Telecom",
+              description: "Automated Ethio Telecom's USSD services in Flutter and added ML Kit-powered recharge card scanning.",
+            },
+            {
+              title: "Criboo",
+              description: "Built an Airbnb-style app for guest house discovery using Java and a mobile-first design.",
+            }
+          ]} />
+
+
+
+        </section>
+
+        <section id="projects" className="min-h-screen w-3/4 flex flex-col items-center m-auto">
+          {/* ...existing project code... */}
+        </section>
+
+        {/* Testimonials Section */}
+        <section id="testimonials" className="min-h-screen flex flex-col items-center justify-center py-16">
+          <h2 className="text-3xl font-bold mb-8 text-center">Testimonials</h2>
+          <div className="w-full max-w-5xl">
+            <TestimonialList testimonials={[
+              {
+                avatarUrl: "/images/jacques.jpeg",
+                name: "Jacques Opperman",
+                title: "Project Manager, Bitventure Consulting Ltd",
+                text: `I have worked with Abdu from October 2023 on custom new software development. His pre-dominant focus was on front-end UI design in flutter.
+
+He has an impeccable work ethic, exceptional eye for design and UI/UX engagement. He grasps design and functional concepts extremely quickly, only matched by his delivery time.
+
+I would strongly urge any potential employer to seriously consider this designer and would endorse and recommend him any day.`
+              },
+              {
+                avatarUrl: "/images/leroux.jpeg",
+                name: "Leroux Breed",
+                title: "Head of Software Development, Bitventure Consultin Ltd",
+                text: `What really stood out about Abdu was his professionalism and reliability. He was never late for a single meeting, communicated clearly, and always took ownership of his work. He integrated effortlessly with the rest of the team,
+contributing not just code but also valuable input during discussions and
+planning sessions. His dedication helped drive the project forward and played
+a big part in its success.`
+              },
+            ]} />
           </div>
         </section>
 
