@@ -4,7 +4,7 @@ import ProjectSectionFeatured from "./project_section_featured";
 export interface Project {
     title: string;
     description: string;
-    project_url: string;
+    project_url?: string;
 }
 
 export default function ProjectList({ projects }: { projects: Project[] }) {
