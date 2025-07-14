@@ -7,6 +7,8 @@ import TechnologyExperience from './ui/about/technology_experience';
 import Image from 'next/image';
 import ProjectSectionFeatured from './ui/project/project_section_featured';
 import ProjectList, { Project } from './ui/project/project_list';
+import TestimonialList from './ui/testimonials/testimonial_list';
+
 
 export default function Home() {
 
@@ -195,7 +197,7 @@ export default function Home() {
             {
               title: "Chegebeya Merchant App",
               description: "Developed the merchant app for the Chegebeya B2B platform and enhanced admin portal using Next.js and Tailwind CSS.",
-              project_url: "https://chegebeya.com/" 
+              project_url: "https://chegebeya.com/"
             },
             {
               title: "Wanza Express",
@@ -205,7 +207,7 @@ export default function Home() {
             {
               title: "News & Entertainment App",
               description: "Rebuilt and redesigned a Flutter news app using feature-based architecture, Flutter BLoC, and Dio integration.",
-              project_url: "https://addisradioperspective.wordpress.com/" 
+              project_url: "https://addisradioperspective.wordpress.com/"
             },
             {
               title: "Axumite Ride",
@@ -231,6 +233,44 @@ export default function Home() {
 
 
 
+        </section>
+
+        <section id="projects" className="min-h-screen w-3/4 flex flex-col items-center m-auto">
+          {/* ...existing project code... */}
+        </section>
+
+        {/* Testimonials Section */}
+        <section id="testimonials" className="min-h-screen flex flex-col items-center justify-center py-16">
+          <h2 className="text-3xl font-bold mb-8 text-center">Testimonials</h2>
+          <div className="w-full max-w-5xl">
+            <TestimonialList testimonials={[
+              {
+                avatarUrl: "/images/jacques.jpeg",
+                name: "Jacques Opperman",
+                title: "Senior Software Engineer",
+                text: `I have worked with Abdu from October 2023 on custom new software development. His pre-dominant focus was on front-end UI design in flutter.
+
+He has an impeccable work ethic, exceptional eye for design and UI/UX engagement. He grasps design and functional concepts extremely quickly, only matched by his delivery time.
+
+I would strongly urge any potential employer to seriously consider this designer and would endorse and recommend him any day.`
+              },
+              {
+                avatarUrl: "/images/leroux.jpeg",
+                name: "Leroux Breed",
+                title: "Product Manager",
+                text: `What really stood out about Abdu was his professionalism and reliability. He was never late for a single meeting, communicated clearly, and always took ownership of his work. He integrated effortlessly with the rest of the team,
+contributing not just code but also valuable input during discussions and
+planning sessions. His dedication helped drive the project forward and played
+a big part in its success.`
+              },
+              {
+                avatarUrl: "/images/avatar3.jpg",
+                name: "John Smith",
+                title: "Tech Lead",
+                text: "Abdurazak's attention to detail and passion for clean architecture make him a standout engineer. Highly recommended for any team."
+              }
+            ]} />
+          </div>
         </section>
 
         {/* Contact Section */}
