@@ -247,7 +247,7 @@ export default function Home() {
               {
                 avatarUrl: "/images/jacques.jpeg",
                 name: "Jacques Opperman",
-                title: "Senior Software Engineer",
+                title: "Project Manager, Bitventure Consulting Ltd",
                 text: `I have worked with Abdu from October 2023 on custom new software development. His pre-dominant focus was on front-end UI design in flutter.
 
 He has an impeccable work ethic, exceptional eye for design and UI/UX engagement. He grasps design and functional concepts extremely quickly, only matched by his delivery time.
@@ -257,18 +257,12 @@ I would strongly urge any potential employer to seriously consider this designer
               {
                 avatarUrl: "/images/leroux.jpeg",
                 name: "Leroux Breed",
-                title: "Product Manager",
+                title: "Head of Software Development, Bitventure Consultin Ltd",
                 text: `What really stood out about Abdu was his professionalism and reliability. He was never late for a single meeting, communicated clearly, and always took ownership of his work. He integrated effortlessly with the rest of the team,
 contributing not just code but also valuable input during discussions and
 planning sessions. His dedication helped drive the project forward and played
 a big part in its success.`
               },
-              {
-                avatarUrl: "/images/avatar3.jpg",
-                name: "John Smith",
-                title: "Tech Lead",
-                text: "Abdurazak's attention to detail and passion for clean architecture make him a standout engineer. Highly recommended for any team."
-              }
             ]} />
           </div>
         </section>
