@@ -1,3 +1,4 @@
+import Head from "next/head";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "@/app/globals.css";
@@ -38,6 +39,9 @@ const gilroy = localFont(
 
 export const metadata: Metadata = {
   title: "Abdurazak Abrar",
+  icons: {
+    icon: "/images/me.jpeg"
+  },
   description: "A developer portfolio website",
 };
 
@@ -48,8 +52,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={gilroy.variable}>
-      <body
-      >
+      <Head>
+        <link rel="icon" href="/images/me.jpeg" type="image/jpeg" />
+      </Head>
+      <body>
         {children}
       </body>
     </html>
