@@ -4,9 +4,8 @@ import { LucideGithub, LucideLinkedin } from 'lucide-react';
 import './globals.css';
 import { useEffect, useState } from "react";
 import TechnologyExperience from './ui/about/technology_experience';
-import Image from 'next/image';
 import ProjectSectionFeatured from './ui/project/project_section_featured';
-import ProjectList, { Project } from './ui/project/project_list';
+import ProjectList from './ui/project/project_list';
 import TestimonialList from './ui/testimonials/testimonial_list';
 
 

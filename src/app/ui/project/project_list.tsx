@@ -1,5 +1,4 @@
 import ProjectItem from "./project_item";
-import ProjectSectionFeatured from "./project_section_featured";
 
 export interface Project {
     title: string;
