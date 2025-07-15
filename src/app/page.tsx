@@ -262,6 +262,12 @@ contributing not just code but also valuable input during discussions and
 planning sessions. His dedication helped drive the project forward and played
 a big part in its success.`
               },
+              {
+                avatarUrl: "/images/dagim.jpeg",
+                name: "Dagim Feyessa",
+                title: "Senior Software Engineer, Bitventure Consulting Ltd",
+                text: `Abdulrazak Abrar is an exemplary Senior Mobile Developer, highly recommended by Dagim Feyessa, Project Lead at Bitventure, with whom he collaborated for over 7 years. He consistently demonstrated outstanding leadership, exceptional code quality, and a strong work ethic, effectively solving complex problems and building robust systems. His dedication and team-player attitude make him a valuable asset.`
+              }
             ]} />
           </div>
         </section>
