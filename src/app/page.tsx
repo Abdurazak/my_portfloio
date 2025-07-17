@@ -2,7 +2,7 @@
 
 import { LayoutGrid, Mail, MessageSquare, User } from 'lucide-react';
 import './globals.css';
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import ContactSection from './ui/contact/contact_section';
 import AboutSection from './ui/about/about_section';
 import ProjectSection from './ui/project/project_section';
