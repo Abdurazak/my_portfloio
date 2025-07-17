@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function ContactSection() {
 
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState('');
+  
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setFormData({
     ...formData,
@@ -12,7 +12,6 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('Sending...');
 
     try {
       const response = await fetch('/api/contact', {
@@ -23,12 +22,10 @@ export default function ContactSection() {
 
       if (!response.ok) throw new Error('Failed to send message');
 
-      const result = await response.json();
-      setStatus('Message sent successfully!');
+      await response.json();
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       console.error(error);
-      setStatus('Error sending message. Please try again later.');
     }
   };
 
