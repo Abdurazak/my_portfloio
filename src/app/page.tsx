@@ -1,6 +1,6 @@
 'use client'
-import Link from 'next/link'
-import { LayoutGrid, LucideGithub, LucideLinkedin, Mail, MessageSquare, User } from 'lucide-react';
+
+import { LayoutGrid, Mail, MessageSquare, User } from 'lucide-react';
 import './globals.css';
 import { useEffect, useRef, useState } from "react";
 import ContactSection from './ui/contact/contact_section';
@@ -8,56 +8,13 @@ import AboutSection from './ui/about/about_section';
 import ProjectSection from './ui/project/project_section';
 import TestimonialsSection from './ui/testimonials/testimonials_section';
 import CustomNav from './ui/common/custom_nav';
+import Introduction from './ui/introduction/introduction';
 
 
 export default function Home() {
 
   const [activeSection, setActiveSection] = useState('about');
   const projectsSectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.3,
-    }
-
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      const visible = entries.filter(entry => entry.isIntersecting);
-      if (visible.length > 0) {
-        // Sort by top position (closest to top of viewport)
-        visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-        const sectionId = visible[0].target.id;
-        setActiveSection(sectionId);
-
-        const url = new URL(window.location.href);
-        url.hash = sectionId;
-        window.history.replaceState({}, "", url.toString());
-      }
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    // Observe all sections
-    const sections = document.querySelectorAll("section[id]")
-    sections.forEach((section) => {
-      observer.observe(section)
-    })
-
-    return () => {
-      sections.forEach((section) => {
-        observer.unobserve(section)
-      })
-    }
-
-  }, []);
-  const scrollToSection = (sectionId: string) => (e: React.MouseEvent) => {
-    e.preventDefault()
-    const section = document.getElementById(sectionId)
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" })
-    }
-  }
 
   const handleViewProjectsClick = () => {
     if (projectsSectionRef.current) {
@@ -94,9 +51,11 @@ export default function Home() {
         },
       ]} activeSection={activeSection} />
       <div className="pt-32">
+        {/* Introduction Section */}
+        <Introduction onViewProjectsClick={handleViewProjectsClick} />
 
         {/* About Section */}
-        <AboutSection onViewProjectsClick={handleViewProjectsClick} />
+        <AboutSection />
 
         {/* Projects Section */}
 

@@ -1,6 +1,6 @@
 import { LucideGithub, LucideIcon, LucideLinkedin } from "lucide-react";
 import Link from "next/link";
-import { FC, SVGProps, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 
 interface NavItem {
