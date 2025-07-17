@@ -1,9 +1,14 @@
 import ProjectSectionFeatured from "./project_section_featured";
 import ProjectList from "./project_list";
+import { forwardRef, Ref } from 'react';
 
-export default function ProjectSection() {
+interface ProjectSectionProps {
+  ref?: Ref<HTMLElement>;
+}
+
+const ProjectSection = forwardRef<HTMLElement, ProjectSectionProps>((props, ref) => {
   return (
-    <section id="projects" className="min-h-screen w-3/4 flex flex-col items-center m-auto">
+    <section id="projects" className="min-h-screen w-3/4 flex flex-col items-center m-auto" ref={ref}>
       <ProjectSectionFeatured image_url={'/images/bejae_feature_graphic.jpg'} image_alt={'Bejae Feature Image'} description={"Translated complex Figma designs into pixel-perfect, responsive Flutter UI for Bejae's device financing platform while architecting a scalable, feature-based structure that enhanced user engagement, modularity, and onboarding efficiency."} />
       <ProjectList projects={[
         {
@@ -54,4 +59,7 @@ export default function ProjectSection() {
       ]} />
     </section>
   );
-}
+});
+
+ProjectSection.displayName = 'ProjectSection'; // Recommended for debugging
+export default ProjectSection;

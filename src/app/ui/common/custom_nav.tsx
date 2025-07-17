@@ -11,10 +11,11 @@ interface NavItem {
 
 interface CustomNavProps {
     items: NavItem[];
+    activeSection: string;
 }
 
-export default function CustomNav({ items }: CustomNavProps) {
-    const [activeSection, setActiveSection] = useState('about');
+export default function CustomNav({ items,activeSection }: CustomNavProps) {
+    const [selectedSection, setselectedSection] = useState(activeSection);
 
     useEffect(() => {
         const observerOptions = {
@@ -29,7 +30,7 @@ export default function CustomNav({ items }: CustomNavProps) {
                 // Sort by top position (closest to top of viewport)
                 visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
                 const sectionId = visible[0].target.id;
-                setActiveSection(sectionId);
+                setselectedSection(sectionId);
 
                 const url = new URL(window.location.href);
                 url.hash = sectionId;
@@ -75,7 +76,7 @@ export default function CustomNav({ items }: CustomNavProps) {
                         <li key={item.section}>
                             <a
                                 href={`#${item.section}`}
-                                className={`flex items-center hover:text-black ${activeSection === item.section ? "text-black font-medium" : "text-gray-700"
+                                className={`flex items-center hover:text-black ${selectedSection === item.section ? "text-black font-medium" : "text-gray-700"
                                     }`}
                                 onClick={() => scrollToSection?.(item.section)}
                             >
