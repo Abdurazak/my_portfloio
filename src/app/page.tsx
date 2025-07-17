@@ -7,6 +7,7 @@ import ContactSection from './ui/contact/contact_section';
 import AboutSection from './ui/about/about_section';
 import ProjectSection from './ui/project/project_section';
 import TestimonialsSection from './ui/testimonials/testimonials_section';
+import CustomNav from './ui/common/custom_nav';
 
 
 export default function Home() {
@@ -60,62 +61,28 @@ export default function Home() {
 
   return (
     <main className="container mx-auto px-4 py-8 font-gilroy">
-      <nav className="sticky top-0 z-10 bg-white/90 backdrop-blur-md flex items-center justify-between">
-        {/* Name/Logo */}
-        <div>
-          <Link href="/" className="text-2xl font-bold">
-            Abdurazak Abrar
-          </Link>
-        </div>
-
-        {/* Navigation Links */}
-        <div className="bg-gray-50 rounded-full px-6 py-2">
-          <ul className="flex space-x-8">
-            <li>
-              <a href="#about" onClick={scrollToSection('about')} className={`flex items-center hover:text-black ${activeSection === "about" ? "text-black font-medium" : "text-gray-700"}`}>
-                <span className="mr-2">
-                  <User size={16} />
-                </span>
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#projects" onClick={scrollToSection('projects')} className={`flex items-center hover:text-black ${activeSection === "projects" ? "text-black font-medium" : "text-gray-700"}`}>
-                <span className="mr-2">
-                  <LayoutGrid size={16} />
-                </span>
-                Projects
-              </a>
-            </li>
-            <li>
-              <a href="#testimonials" onClick={scrollToSection('testimonials')} className={`flex items-center hover:text-black ${activeSection === "testimonials" ? "text-black font-medium" : "text-gray-700"}`}>
-                <span className="mr-2">
-                  <MessageSquare size={16} />
-                </span>
-                Testimonials
-              </a>
-            </li>
-            <li>
-              <a href="#contact" onClick={scrollToSection('contact')} className={`flex items-center hover:text-black ${activeSection === "contact" ? "text-black font-medium" : "text-gray-700"}`}>
-                <span className="mr-2">
-                  <Mail size={16} />
-                </span>
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Social Links */}
-        <div className="flex space-x-4">
-          <Link href="https://github.com/Abdurazak" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <LucideGithub className="w-6 h-6 text-gray-800 hover:text-black" />
-          </Link>
-          <Link href="https://www.linkedin.com/in/abdurazak-abrar-4445818a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <LucideLinkedin className="w-6 h-6 text-gray-800 hover:text-black" />
-          </Link>
-        </div>
-      </nav>
+      <CustomNav items={[
+        {
+          section: 'about',
+          icon: User,
+          label: 'About',
+        },
+        {
+          section: 'projects',
+          icon: LayoutGrid,
+          label: 'Projects',
+        },
+        {
+          section: 'testimonials',
+          icon: MessageSquare,
+          label: 'Testimonials',
+        },
+        {
+          section: 'contact',
+          icon: Mail,
+          label: 'Contact',
+        },
+      ]} />
       <div className="pt-32">
         <div className="flex justify-center min-h-screen">
           <div className='text-center'>
