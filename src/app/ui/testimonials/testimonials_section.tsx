@@ -22,7 +22,7 @@ export default function TestimonialsSection() {
             avatarUrl: "/images/dagim.jpeg",
             name: "Dagim Feyessa",
             title: "Senior Software Engineer, Bitventure Consulting Ltd",
-            text: `Abdulrazak Abrar is an exemplary Senior Mobile Developer, highly recommended by Dagim Feyessa, Project Lead at Bitventure, with whom he collaborated for over 7 years. He consistently demonstrated outstanding leadership, exceptional code quality, and a strong work ethic, effectively solving complex problems and building robust systems. His dedication and team-player attitude make him a valuable asset.`
+            text: `I’ve had the pleasure of working with Abdulrazak Abrar for over 7 years, and I can confidently say he is an exemplary Senior Mobile Developer. His leadership, code quality, and work ethic are outstanding. He consistently solved complex problems and built robust systems with precision. Abdulrazak is not only technically strong but also a dedicated team player — a true asset to any project.`
           }
         ]} />
       </div>
