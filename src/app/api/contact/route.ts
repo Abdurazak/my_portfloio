@@ -1,19 +1,31 @@
 import { NextResponse, NextRequest } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const MY_EMAIL = process.env.MY_GMAIL_ADDRESS as string;
+// Declare resend at the module level without initializing it
+let resend: Resend;
 
-if (!MY_EMAIL) {
-    console.error("MY_EMAIL environment variable is not set");
-}
-
-if (!process.env.RESEND_API_KEY) {
-    console.error("RESEND_API_KEY environment variable is not set");
-}
+// Function to initialize the Resend client if it hasn't been already
+const initializeResend = () => {
+    if (!resend) {
+        const resendApiKey = process.env.RESEND_API_KEY;
+        if (!resendApiKey) {
+            // This error will be caught by the try-catch block in the handler
+            throw new Error("RESEND_API_KEY environment variable is not set on the server.");
+        }
+        resend = new Resend(resendApiKey);
+    }
+};
 
 export async function POST(request: NextRequest) {
     try {
+        // Ensure the Resend client is initialized
+        initializeResend();
+
+        const myEmail = process.env.MY_GMAIL_ADDRESS;
+        if (!myEmail) {
+            throw new Error("MY_GMAIL_ADDRESS environment variable is not set on the server.");
+        }
+
         const { name, email, message } = await request.json();
 
         if (!name || !email || !message) {
@@ -22,7 +34,7 @@ export async function POST(request: NextRequest) {
 
         const { data, error } = await resend.emails.send({
             from: 'onboarding@resend.dev',
-            to: MY_EMAIL,
+            to: myEmail,
             subject: `New contact form submission from ${name}`,
             replyTo: email,
             html: `<p><strong>Name:</strong> ${name}</p>
@@ -37,12 +49,12 @@ export async function POST(request: NextRequest) {
 
         return NextResponse.json({ message: "Email sent successfully", data }, { status: 200 });
     } catch (e: unknown) {
+        console.error('API route error:', e);
         let errorMessage = 'An unknown error occurred';
         if (e instanceof Error) {
             errorMessage = e.message;
         }
+        // Return a 500 status code for server-side errors
         return NextResponse.json({ message: 'Internal Server Error', error: errorMessage }, { status: 500 });
     }
-
-
 }
