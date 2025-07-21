@@ -37,7 +37,6 @@ export async function POST(request: NextRequest) {
 
         return NextResponse.json({ message: "Email sent successfully", data }, { status: 200 });
     } catch (e: unknown) {
-        console.error('API route error:', e);
         let errorMessage = 'An unknown error occurred';
         if (e instanceof Error) {
             errorMessage = e.message;

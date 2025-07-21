@@ -1,4 +1,3 @@
-import Head from "next/head";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "@/app/globals.css";
@@ -39,10 +38,25 @@ const gilroy = localFont(
 
 export const metadata: Metadata = {
   title: "Abdurazak Abrar",
+  description: "A developer portfolio website showcasing projects and skills.",
   icons: {
     icon: "/images/me.jpeg"
   },
-  description: "A developer portfolio website",
+  openGraph: {
+    title: "Abdurazak Abrar - Developer Portfolio",
+    description: "A developer portfolio website showcasing projects and skills.",
+    url: process.env.NEXT_SITE_URL,
+    siteName: "Abdurazak Abrar Portfolio",
+    images: [
+      {
+        url: `${process.env.NEXT_SITE_URL}/images/me.jpeg`,
+        width: 800,
+        height: 800,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
@@ -52,9 +66,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={gilroy.variable}>
-      <Head>
-        <link rel="icon" href="/images/me.jpeg" type="image/jpeg" />
-      </Head>
       <body>
         {children}
       </body>
