@@ -45,11 +45,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Abdurazak Abrar - Developer Portfolio",
     description: "A developer portfolio website showcasing projects and skills.",
-    url: process.env.NEXT_SITE_URL,
+    url: process.env.NEXT_PUBLIC_SITE_URL,
     siteName: "Abdurazak Abrar Portfolio",
     images: [
       {
-        url: `${process.env.NEXT_SITE_URL}/images/me.jpeg`,
+        url: `${process.env.NEXT_PUBLIC_SITE_URL}/images/me.jpeg`,
         width: 800,
         height: 800,
       },
